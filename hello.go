@@ -46,7 +46,7 @@ func getConfig() *config {
 	flag.Parse()
 	greeting := os.Getenv("ALT_GREETING")
 	if len(greeting) == 0 {
-		greeting = "Hello 4!"
+		greeting = "Hello 5!"
 	}
 	return &config{*enableRiskyFeature, *port, greeting}
 }
