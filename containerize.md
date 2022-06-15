@@ -7,6 +7,7 @@ Define these first; they get used below.
 Requirments: _Go_ compiler, _curl_, and _docker_.
 
 <!-- @funcBuildVersionedExecutable -->
+
 ```
 function buildVersionedExecutable {
   local tmpDir=$1
@@ -31,6 +32,7 @@ function buildVersionedExecutable {
 ```
 
 <!-- @funcRunAndQuitRawBinaryToTest -->
+
 ```
 function runAndQuitRawBinaryToTest {
   local tmpDir=$1
@@ -54,6 +56,7 @@ function runAndQuitRawBinaryToTest {
 ```
 
 <!-- @funcBuildDockerImage -->
+
 ```
 function buildDockerImage {
   local tmpDir=$1
@@ -76,8 +79,8 @@ EOF
 
 ```
 
-
 <!-- @funcRunAndQuitInsideDockerToTest -->
+
 ```
 function runAndQuitInsideDockerToTest {
   local pgmName=$1
@@ -96,6 +99,7 @@ function runAndQuitInsideDockerToTest {
 ```
 
 <!-- @funcPushToDockerHub -->
+
 ```
 function pushToDockerHub {
   local dockerUser=$1
@@ -112,6 +116,7 @@ function pushToDockerHub {
 ```
 
 <!-- @funcBuildContainer -->
+
 ```
 function buildContainer {
   local githubOrg=$1
@@ -132,6 +137,7 @@ function buildContainer {
 ```
 
 <!-- @funcRemoveLocalImage -->
+
 ```
 function removeLocalImage {
   local pgmName=$1
@@ -148,24 +154,28 @@ function removeLocalImage {
 ### Create and upload images to [hub.docker.com](https://hub.docker.com/r/monopole/hello)
 
 <!-- @setUp -->
+
 ```
 dockerUser=monopole
 githubOrg=monopole
 ```
 
 <!-- @login -->
+
 ```
 printf "\nEnter docker password, followed by C-d: "
 docker login --username=$dockerUser --password-stdin
 ```
 
 <!-- @doVersion1 -->
+
 ```
 buildContainer $githubOrg hello 1 8999
 pushToDockerHub $dockerUser hello 1
 ```
 
 <!-- @doVersion2 -->
+
 ```
 buildContainer $githubOrg hello 2 8999
 pushToDockerHub $dockerUser hello 2
