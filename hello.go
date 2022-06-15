@@ -28,7 +28,7 @@ const (
 	tmplBody = `
 {{define "` + tmplName + `" -}}
 <html><body>
-<p>update stg</p>
+<p>update stg1</p>
 Version {{.V}} : {{if .C.Risky}}<em>{{end}}
 {{- .C.Greeting}}{{if .C.Risky}}</em>{{end}} {{.P}}
 </body></html>
