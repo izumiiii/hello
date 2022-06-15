@@ -28,7 +28,7 @@ const (
 	tmplBody = `
 {{define "` + tmplName + `" -}}
 <html><body>
-<p>update stg5</p>
+<p>update stg6</p>
 Version {{.V}} : {{if .C.Risky}}<em>{{end}}
 {{- .C.Greeting}}{{if .C.Risky}}</em>{{end}} {{.P}}
 </body></html>
@@ -46,7 +46,7 @@ func getConfig() *config {
 	flag.Parse()
 	greeting := os.Getenv("ALT_GREETING")
 	if len(greeting) == 0 {
-		greeting = "Hello 5!"
+		greeting = "Hello 6!"
 	}
 	return &config{*enableRiskyFeature, *port, greeting}
 }
